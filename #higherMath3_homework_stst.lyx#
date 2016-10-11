@@ -1038,5 +1038,74 @@ The x with the minimal energy is:
 
 \end_layout
 
+\begin_layout Subsection
+Compute the “energy demand” 
+\begin_inset Formula $|x|^{2}$
+\end_inset
+
+ of these three solutions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|x|^{2}=x_{1}^{2}+x_{2}^{2}+x_{3}^{2}+x_{4}^{2}+x_{5}^{2}+x_{6}^{2}+x_{7}^{2}+x_{8}^{2}+x_{9}^{2}+x_{10}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Solution
+\begin_inset Formula $x_{i}$
+\end_inset
+
+= 0 for 2 ≤ i ≤ 9
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|x|^{2}=\left(\frac{1}{9}\right)^{2}+\left(\frac{-1}{9}\right)^{2}=\frac{2}{81}=0,0247
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Solution 
+\begin_inset Formula $x_{1}=x_{2}=x_{3}=x_{4}=x_{5}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{6}=x_{7}=x_{8}=x_{9}=x_{10}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|x|^{2}=5*\left(\frac{1}{25}\right)^{2}+5*\left(\frac{-1}{25}\right)^{2}=\frac{10}{625}=0,0160
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Solution minimal Energie
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document

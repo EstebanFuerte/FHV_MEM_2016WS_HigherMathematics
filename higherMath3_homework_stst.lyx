@@ -553,8 +553,8 @@ A=\left(\begin{array}{ccc}
 0\\
 0\\
 0\\
-1\\
--2
+-1\\
+2
 \end{array}\right)
 \]
 
@@ -608,7 +608,7 @@ To minimize the equation a factorization with the following equation is
 \begin_layout Standard
 \begin_inset Formula 
 \[
-(a_{11}*x_{1}+a_{12}*x_{2}-b_{1})^{2}+(a_{21}*x_{1}+a_{22}*x_{2}-b_{2})^{2}+\ldots
+(a_{11}*x_{1}+a_{12}*x_{2}+a_{13}*x_{3}-b_{1})^{2}+(a_{21}*x_{1}+a_{22}*x_{2}+a_{23}*x_{3}-b_{2})^{2}+\ldots
 \]
 
 \end_inset
@@ -623,10 +623,10 @@ That leads to a Matrix A and a b of:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A=\left(\begin{array}{cc}
-0 & -6\\
--4 & 3\\
-1 & 8
+A=\left(\begin{array}{ccc}
+0 & -6 & 0\\
+-4 & 3 & 0\\
+1 & 8 & 0
 \end{array}\right)\quad b=\left(\begin{array}{c}
 -4\\
 1\\
@@ -1013,7 +1013,128 @@ x = A'*((A*A')
 \end_layout
 
 \begin_layout Standard
-T
+The x with the minimal energy is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+0.0545\\
+0.0424\\
+0.0303\\
+0.0182\\
+0.0061\\
+-0.0061\\
+-0.0182\\
+-0.0303\\
+-0.0424\\
+-0.0545
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Compute the “energy demand” 
+\begin_inset Formula $|x|^{2}$
+\end_inset
+
+ of these three solutions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|x|^{2}=x_{1}^{2}+x_{2}^{2}+x_{3}^{2}+x_{4}^{2}+x_{5}^{2}+x_{6}^{2}+x_{7}^{2}+x_{8}^{2}+x_{9}^{2}+x_{10}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Solution
+\begin_inset Formula $x_{i}$
+\end_inset
+
+= 0 for 2 ≤ i ≤ 9
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|x|^{2}=\left(\frac{1}{9}\right)^{2}+\left(\frac{-1}{9}\right)^{2}=\frac{2}{81}=0,0247
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Solution 
+\begin_inset Formula $x_{1}=x_{2}=x_{3}=x_{4}=x_{5}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{6}=x_{7}=x_{8}=x_{9}=x_{10}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|x|^{2}=5*\left(\frac{1}{25}\right)^{2}+5*\left(\frac{-1}{25}\right)^{2}=\frac{10}{625}=0,0160
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Solution minimal Energie
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Matlab"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+x = A'*((A*A')
+\backslash
+[0;1])
+\end_layout
+
+\begin_layout Plain Layout
+
+sum(x.^2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|x|^{2}=0.0121
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
