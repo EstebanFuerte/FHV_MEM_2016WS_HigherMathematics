@@ -32,14 +32,18 @@ function [f_iter,numIter] = NewtonIteration_stst (x_start, E, R)
 
   % 3. perform iteration steps
   while (abs(f) > 10e-8)
-    plot(x,f,'ro');
     
+
     g = x^3-6*x^2+10*x;
     f = g-(E-x)/R;
     f_der = 3*x^2 -12*x +10 + 1/R;
     
     delta_x = -f/f_der;
+    x_old = x;
     x = x + delta_x;
+    plot(x_old,f,'ro');
+    plot([x_old,x_old],[f,0],'r--');       % plot vertical line
+    plot([x_old,x],[f,0],'r--');
     
     f_iter(numIter) = f;
     numIter=numIter+1;
