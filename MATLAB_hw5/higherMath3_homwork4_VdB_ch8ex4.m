@@ -28,15 +28,15 @@ A(:,4) = log(d);
 A(:,5) = log(D);
 b = log(L(:));
 
-x_hat = A\b;
+x_hat = A\b
 
 % log(alpha) = x1 -> alpha = exp(x1)
 alpha = exp(x_hat(1));
 L_hat = alpha*n.^x_hat(2).*w.^x_hat(3).*d.^x_hat(4).*D.^x_hat(5);
 
-ei = 100 * abs(L_hat-L)/L;
-av = sum(ei)/50;
-figure; plot(av,'o'); 
-title('average percantage error of the 50 inductors');
+ei = 100 * abs(L_hat-L)./L;
+av = sum(ei)/50
+figure; plot(ei,'o'); 
+title('percantage error of the 50 inductors');
 xlabel('Inductor sample');
-ylabel('Average percantage error');
+ylabel('Percantage error');
